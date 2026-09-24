@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аренда Помещений</title>
+
+<!-- Подключения -------------------------------------------------------------------------------------------------------------------------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -------------------------------------------------------------------------------------------------------------------------------------------------->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center text-decoration-none" href="#">
+            <img src="c:\Users\Admin\Downloads\building-check.svg" width="40" height="40" alt="Logo" class="me-2">
+            <span style="color: #0d6efd;">Деловой</span>Квадрат
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Помещения</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Преимущества</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Отзывы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Контакты</a>
+                </li>
+            </ul>
+
+            <button class="btn btn-primary fw-semibold" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                Оставить заявку
+            </button>
+        </div>
+    </div>
+</nav>
+<!-- Галерея (карусель 1) -------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgtwzvIzIWbLgookpqHp5mVbXF9GXazap-eQYFC2Q4g&s=10" class="d-block w-100" alt="Фото 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Аренда помещений в вашем городе</h5>
+                <p>Адаптация под специфику бизнеса. Многие помещения сдаются с возможностью перепланировки и дооборудования (по согласованию). Например, под кафе, шоурум, студию или мини‑производство.</p>
+                <a href="#selection-form" class="btn btn-primary btn-lg mt-3">Подобрать помещение</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYvv_lOjLBrk7yLuTbMiyc-bIRmpoggvab5zNHONy5qA&s=10" class="d-block w-100" alt="Фото 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Аренда помещений в вашем городе</h5>
+                <p>Доступ к готовой инфраструктуре. В бизнес‑центрах и торговых комплексах уже есть охрана, клининг, пропускная система, парковка, интернет‑провайдеры — не нужно всё организовывать с нуля.</p>
+                <a href="#selection-form" class="btn btn-primary btn-lg mt-3">Подобрать помещение</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgZBcUHhMIEoINECGn2cXJ_8RQnd7ZEurQEQxraCGAdgaD5Lh-63rCUdro&s=10" class="d-block w-100" alt="Фото 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Аренда помещений в вашем городе</h5>
+                <p>Проще реагировать на внешние изменения. При изменении транспортной доступности, застройки района или потока клиентов можно сменить помещение, сохранив устойчивость бизнеса.</p>
+                <a href="#selection-form" class="btn btn-primary btn-lg mt-3">Подобрать помещение</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Карточки помещений -------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="container mt-4">
+    <div class="row g-4">
+<!-- Card 1 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbfLqXdkPgB5ausRXAIXW20sIoR4OlI31K3N1tXpVruA&s=10" class="card-img-top" alt="Карточка 1">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Офис на Маяковской, 45 м²</h5>
+                    <p class="card-text">Максимально конкретно, сразу понятно: локация и площадь. Отлично для объявлений.</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#1">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Card 2 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUNIjXvXKm1JCUmaovyPXvD4VvI6FW7cO9yjipU8V1mQ&s=10" class="card-img-top" alt="Карточка 2">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Деловой уголок: 45 м², центр</h5>
+                    <p class="card-text">Мягче и уютнее, подойдёт, если хочется создать ощущение «своего места». (ул. Рылеева, 16А, Офис 6)</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#2">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Card 3 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiwYUe-_sk9DXayqR62AjU5zu5yuQkKSw1vIq6gGQj5g&s=10" class="card-img-top" alt="Карточка 3">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Точка фокуса: офис 45 м² в центре</h5>
+                    <p class="card-text">С намёком на продуктивность, хорошо для креативных команд.</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#3">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Card 4 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1f8_CA6AWr33KLvB61zf_bVu1iLZku7M3bXvtwfVLzg&s=10" class="card-img-top" alt="Карточка 4">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Городской хаб: 45 м² в сердце города</h5>
+                    <p class="card-text">Образно и динамично, подойдёт для стартапов и команд, которым важна «энергия города».</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#4">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Card 5 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTIcJywjsmJBiTWcFKjPEPNIUetOXek0aEWD-V570-KA&s=10" class="card-img-top" alt="Карточка 5">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Офис-формат: 45 м², деловой центр</h5>
+                    <p class="card-text">Акцент на формат и класс локации, звучит профессионально.</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#5">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Card 6 -------------------------------------------------------------------------------------------------------------------------------------------------->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+                <span class="badge bg-primary position-absolute m-2">Новинка</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLevZlzpjvtLntsbkoNbCI2ZCJ9a21eqHzcPnCtc7UQ&s=10" class="card-img-top" alt="Карточка 6">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Офис с видом: 45 м², центр</h5>
+                    <p class="card-text">Если есть фишка вроде хорошего вида из окна, это сразу выделяет предложение.</p>
+                    <a href="#" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#6">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальные окна 1-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="1" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Подробная информация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <p>Адрес: пр. Ленина, 21-б, офис 6. Стоимость: 90 тыс.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Модальные окна 2-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="2" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Подробная информация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <p>Адрес = (ул. Рылеева, 16А, Офис 6). Денежная оплата = 110 тыс.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальные окна 3-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="3" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Подробная информация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <p>Адрес = (ул. Красная, 63, Офис 6). Денежная оплата = 60 тыс.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальные окна 4-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="4" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Подробная информация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <p>Адрес = (ул. Кирова, 118, Офис 6). Денежная оплата = 47 тыс.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Модальные окна 5-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="5" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Подробная информация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <p>Адрес = (пр. Ленина, 2, 6 офис, 1 этаж). Денежная оплата = 90 тыс.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Модальные окна 6-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="6" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Подробная информация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <p>Адрес = (ул. Рылеева, 24, офис 6). Денежная оплата = 75 тыс.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Преимущества компании-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 col-lg-3">
+  <ul class="list-group">
+    <li class="list-group-item">
+    <img src="c:\Users\Admin\Downloads\1-circle.svg" width="15" height="15" </img>
+    Прозрачная цена — это честная и понятная стоимость товара или услуги, в которую полностью включены все расходы, без скрытых комиссий, неожиданных доплат или навязанных переплат.
+    </li>
+    <li class="list-group-item">
+    <img src="c:\Users\Admin\Downloads\2-circle.svg" width="15" height="15" </img>
+    Гибкие условия — это правила, договоренности или тарифы, которые можно менять, подстраивать под конкретного человека или ситуацию, а не следовать жестким стандартам.
+    </li>
+    <li class="list-group-item">
+    <img src="c:\Users\Admin\Downloads\3-circle.svg" width="15" height="15" </img>
+    Быстрый показ — это функция, которая позволяет увидеть содержимое или основные характеристики файла/товара во всплывающем окне без полного открытия или перехода на отдельную страницу.
+    </li>
+    <li class="list-group-item">
+    <img src="c:\Users\Admin\Downloads\4-circle.svg" width="15" height="15" </img>
+    Юридическая поддержка — это профессиональная правовая помощь гражданам и компаниям, направленная на защиту их интересов и соблюдение законов.
+    </li>
+  </ul>
+</div>
+
+<!--Как мы работаем 1(пошагово)-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9s3YI0dyT1NSXNNa1VueDTHMUDcrn8kCyxiqDP5BapA&s=10" width="15" height="15"</img>заявка →
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        —  это официальное или предварительное обращение (запрос) потенциального арендатора к собственнику имущества (или уполномоченному лицу) с просьбой предоставить в пользование конкретный объект или вещь.
+      </div>
+    </div>
+  </div>
+<!--Как мы работаем 2(пошагово)-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkOmriVOQwMK_G35brRFxTWH7zvjnTG0krGRyUykqANw&s=10" width="15" height="15"</img>подбор →
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         — это процесс поиска и выбора подходящего объекта (квартиры, офиса, склада или оборудования) либо надежного нанимателя под заданные требования и бюджет.
+      </div>
+    </div>
+  </div>
+<!--Как мы работаем 3(пошагово)-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNFHvXP-WNh53t1xsQW98lCtpAYsfF0NpC9Od4m9TZeQ&s=10" width="15" height="15"</img>показ →
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        — это демонстрация недвижимости потенциальным нанимателям или арендаторам для заключения договора найма.
+      </div>
+    </div>
+  </div>
+<!--Как мы работаем 4(пошагово)-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtzBZM74uU1VzlO9oo8m1k23hA0sQaCubkrAeix-9RsA&s=10" width="15" height="15"</img>договор →
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+     — это официальное соглашение между владельцем имущества (арендодателем) и тем, кто хочет им временно пользоваться (арендатором) за определенную плату.
+      </div>
+    </div>
+  </div>
+<!--Как мы работаем 5(пошагово)-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXLL1lfmMWmWZOH4g5d7wPl7IC09oB4f3F4DaMnz003w&s=10" width="15" height="15"</img>заселение →
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      — это процедура передачи ключей и допуска арендатора в жилое или коммерческое помещение после заключения договора и оплаты.
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Отзывы клиентов-------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://cs14.pikabu.ru/post_img/2023/05/27/11/og_og_1685214205276595167.jpg" class="d-block w-100" alt="Отзыв 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfj3VW1tccOrdGmBpovA5BUGCW6aR5PnXJSZe3aAZ_9w&s=10" class="d-block w-100" alt="Отзыв 2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElFOosX0dAoWTZHaIrR40hql-7DJPlja8UF-NYEJbhA&s=10" class="d-block w-100" alt="Отзыв 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+</div>
+
+<!--Форма заявки-------------------------------------------------------------------------------------------------------------------------------------------------->
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Имя</label>
+    <input type="text" class="form-control" id="validationCustom01" value="Кирилл" required>
+    <div class="valid-feedback">
+      Хорошо!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Телефон</label>
+    <input type="text" class="form-control" id="validationCustom02" value="+79 82 344 67" required>
+    <div class="valid-feedback">
+      Хорошо!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Email</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+      <div class="invalid-feedback">
+        Хорошо!
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">Тип помещения</label>
+    <input type="text" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+      Хорошо!
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom05" class="form-label">Комментарий</label>
+    <input type="text" class="form-control" id="validationCustom05" required>
+    <div class="invalid-feedback">
+      Хорошо!
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Принять условия и положения
+      </label>
+      <div class="invalid-feedback">
+        Вы должны дать согласие перед отправкой.
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Подтверждение</button>
+  </div>
+</form>
+<!--Футер-------------------------------------------------------------------------------------------------------------------------------------------------->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+    <div class="me-5 d-none d-lg-block">
+      <span>Подписывайтесь на нас в соцсетях:</span>
+    </div>
+
+
+
+    <div>
+      <a href="#" class="me-4 text-reset" title="Telegram">
+        <i class="bi bi-telegram fs-5"></i>
+      </a>
+      <a href="#" class="me-4 text-reset" title="VK">
+        <i class="bi bi-vk fs-5"></i>
+      </a>
+      <a href="#" class="me-4 text-reset" title="YouTube">
+        <i class="bi bi-youtube fs-5"></i>
+      </a>
+      <a href="#" class="me-4 text-reset" title="Discord">
+        <i class="bi bi-discord fs-5"></i>
+      </a>
+      <a href="#" class="me-4 text-reset" title="GitHub">
+        <i class="bi bi-github fs-5"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Кофейный столик
+          </h6>
+          <p>
+            https://vk.ru/Arenda
+          </p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Карта сайта</h6>
+          <p><a href="#home" class="text-reset">Главная</a></p>
+          <p><a href="#about" class="text-reset">Помещения</a></p>
+          <p><a href="#products" class="text-reset">Преимущества</a></p>
+          <p><a href="#services" class="text-reset">Отзывы</a></p>
+          <p><a href="#contacts" class="text-reset">Контакты</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Контакты</h6>
+          <p><i class="fas fa-home me-3"></i>Челябинск</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            Arenda@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>+7 982 344 67 15</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2026 Авторское право:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Arenda.COM</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Стили переключение -------------------------------------------------------------------------------------------------------------------------------------------------->
+
+</head>
+<body class="light">
+
+    <div class="btn-toggle" id="themeToggle" title="Сменить тему">🌙</div>
+    
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        toggle.addEventListener('click', () => {
+            if (body.classList.contains('light')) {
+                body.classList.replace('light', 'dark');
+                toggle.textContent = '☁️'; 
+            } else {
+                body.classList.replace('dark', 'light');
+                toggle.textContent = '🌙';
+            }
+        });
+    </script>
+
+    
+</body>
+</html>
